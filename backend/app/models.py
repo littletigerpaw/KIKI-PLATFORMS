@@ -30,7 +30,7 @@ class Merchant(Base):
 
 class TeamMember(Base):
     __tablename__ = "team_members"
-    __table_args__ = (UniqueConstraint("merchant_id", "email", name="uq_team_member_merchant_email"),)
+    __table_args__ = (UniqueConstraint("merchant_id", "email", name="uq_team_members_merchant_email"),)
 
     id: Mapped[str] = mapped_column(String, primary_key=True, index=True, default=new_id)
     merchant_id: Mapped[str] = mapped_column(String, ForeignKey("merchants.id"), nullable=False, index=True)

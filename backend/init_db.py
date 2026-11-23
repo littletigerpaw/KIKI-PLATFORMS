@@ -1,7 +1,8 @@
-from app.database import Base, engine
-from app.models import Merchant, Product, Store, TeamMember
+"""Bring the database up to the latest schema. Same as `alembic upgrade head`."""
+from pathlib import Path
 
+from alembic import command
+from alembic.config import Config
 
-Base.metadata.create_all(bind=engine)
-
-print("Database schema initialized for KIKI platform.")
+command.upgrade(Config(str(Path(__file__).with_name("alembic.ini"))), "head")
+print("Database is up to date.")
