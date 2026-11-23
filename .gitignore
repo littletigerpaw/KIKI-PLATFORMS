@@ -1,0 +1,26 @@
+# Dependencies and build output
+node_modules
+.next
+*.tsbuildinfo
+coverage/
+
+# Secrets: real env files stay local. Example files are committed as templates.
+.env
+.env.local
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.pytest_cache/
+
+# Local databases (each developer runs `npm run db:migrate` to build their own)
+*.db
+*.db.bak*
+*.sqlite3
+
+# OS / editor
+.DS_Store
